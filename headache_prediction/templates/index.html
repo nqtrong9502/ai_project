@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <a href="/home/">Home</a>
+  <div class=""></div>
+  <h1>Dự đoán bệnh đau đầu</h1>
+  <a  href="/static/BaoCaoLogicMo.pptx" download> Đọc để biết quá trình làm (file ppt)</a>
+
+  <form action="/headache_prediction/" method="POST">
+    {% csrf_token %}
+
+    <span>Tuổi (15-77 tuổi)</span>
+    <input type="text" name="age" >
+    <!-- <div class=""></div> -->
+
+    <span>Thời gian (1-3 giờ)</span>
+    <input type="text" name="duration" >
+    <!-- <div class=""></div> -->
+
+    <span>Tần suất (1-7 lần) </span>
+    <input type="text" name="frequency">
+    <div class=""></div>
+
+    <span>Chỗ</span>
+    <select id="cars" name="location">
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+    </select>
+    <div class=""></div>
+
+    <span>Đau nhói hoặc đau liên tục</span>
+    <select id="cars" name="character">
+      <option value="0">Không</option>
+      <option value="1">Có</option>
+    </select>
+    <div class=""></div>
+
+    <span>Độ đau (mức độ) </span>
+    <select id="cars" name="intensity">
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+
+    <div class=""></div>
+    <span>Cảm giác buồn nôn</span>
+    <select id="cars" name="nausea">
+      <option value="0">Không</option>
+      <option value="1">Có</option>
+    </select>
+    <div class=""></div>
+
+    <span>Nôn mửa</span>
+    <select id="cars" name="vomit">
+      <option value="0">Không</option>
+      <option value="1">Có</option>
+    </select>
+    <div class=""></div>
+
+    <span>Nhạy cảm với tiếng ồn</span>
+    <select id="cars" name="phonophobia">
+      <option value="0">Không</option>
+      <option value="1">Có</option>
+    </select>
+    <div class=""></div>
+
+    <span>Nhạy cảm với ánh sáng</span>
+    <select id="cars" name="photophobia">
+      <option value="0">Không</option>
+      <option value="1">Có</option>
+    </select>
+    <div class=""></div>
+
+    <span>Triệu chứng thị giác có thể đảo ngược (mức độ) </span>
+    <select id="cars" name="visual">
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+    </select>
+    <div class=""></div>
+
+    <span>Triệu chứng cảm giác có thể đảo ngược (mức độ)</span>
+    <select id="cars" name="sensory">
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+    </select>
+    <div class=""></div>
+
+    <span>Thiếu sự phối hợp lời nói</span>
+    <select id="cars" name="dysphasia">
+      <option value="0">Không</option>
+      <option value="1">Có</option>
+    </select>
+    <div class=""></div>
+
+    <span>Âm thanh và từ ngữ rời rạc</span>
+    <select id="cars" name="dysarthria">
+      <option value="0">Không</option>
+      <option value="1">Có</option>
+    </select>
+    <div class=""></div>
+
+    <span>Chóng mặt</span>
+    <select id="cars" name="vertigo">
+      <option value="0">Không</option>
+      <option value="1">Có</option>
+    </select>
+    <div class=""></div>
+
+    <span>Ù tai</span>
+    <select id="cars" name="tinnitus">
+      <option value="0">Không</option>
+      <option value="1">Có</option>
+    </select>
+    <div class=""></div>
+
+    <span>Khó nghe</span>
+    <select id="cars" name="hypoacusis">
+      <option value="0">Không</option>
+      <option value="1">Có</option>
+    </select>
+    <div class=""></div>
+
+    <span>Tầm nhìn đôi</span>
+    <select id="cars" name="diplopia">
+      <option value="0">Không</option>
+      <option value="1">Có</option>
+    </select>
+    <div class=""></div>
+
+    <span>Đồng thời trường mắt phía trước và khiếm khuyết trường mũi và ở cả hai mắt</span>
+    <select id="cars" name="defect">
+      <option value="0">Không</option>
+      <option value="1">Có</option>
+    </select>
+    <div class=""></div>
+
+    <span>Thiếu kiểm soát cơ bắp</span>
+    <select id="cars" name="ataxia">
+      <option value="0">Không</option>
+      <option value="1">Có</option>
+    </select>
+    <div class=""></div>
+
+    <span>Tâm hồn bị ảnh hưởng</span>
+    <select id="cars" name="conscience">
+      <option value="0">Không</option>
+      <option value="1">Có</option>
+    </select>
+    <div class=""></div>
+
+    <span>Dị cảm hai bên đồng thời</span>
+    <select id="cars" name="paresthesia">
+      <option value="0">Không</option>
+      <option value="1">Có</option>
+    </select>
+    <div class=""></div>
+
+    <span>Hoàn cảnh gia đình</span>
+    <select id="cars" name="dpf">
+      <option value="0">Không</option>
+      <option value="1">Có</option>
+    </select>
+    <div class=""></div>
+    <input type="submit" value="Gửi">
+  </form>
+  {% if method == "POST" %}
+    <h1>Kiểu bệnh đau đầu: {{label_name}}</h1>
+  {% endif %}
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <a href="/home/">Home</a>
+
+  <div class="">Nhận dạng cảm xúc đa phhương tiện</div>
+
+  <div class=""></div>
+  <form action="/multimodal_emotion/" method="post">
+    {% csrf_token %}
+    <span>Ten</span>
+    <input type="file" name="name">
+    <div class=""></div>
+    <input type="submit" >
+  </form>
+  {% if method %}
+    <div class="">{{method}}</div>
+  {% endif %}
+</body>
+</html>

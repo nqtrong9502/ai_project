@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <a href="/home/">Home</a>
+  <h1>Nhận dạng bạo lực hay không bạo lực dựa vào hành động</h1>
+  <a  href="/static/NCKH_TYPP.pptx" download> Đọc để biết quá trình làm (file ppt)</a>
+
+  <h1>Mô hình lstm </h1>
+  {% load static %}
+  <video width="300" height="300" controls>
+    <source src="{% static 'model0/outp_violent_cam1_20.mp4'%}"/>
+  </video> 
+  <video width="300" height="300" controls>
+    <source src="{% static 'model0/output_non_violent_cam1_10.mp4'%}"/>
+  </video> 
+  <video width="300" height="300" controls>
+    <source src="{% static 'model0/output_violent_cam1_20.mp4'%}"/>
+  </video> 
+  <video width="300" height="300" controls>
+    <source src="{% static 'model0/output_violent_cam1_90.mp4'%}"/>
+  </video> 
+  <h1>Mô hình GCN </h1>
+  <video width="300" height="300" controls>
+    <source src="{% static 'model1/model_gcn_hockey_violence1.mp4'%}"/>
+  </video> 
+  <video width="300" height="300" controls>
+    <source src="{% static 'model1/model_gcn_hockey_violence2.mp4'%}"/>
+  </video> 
+  <video width="300" height="300" controls>
+    <source src="{% static 'model1/model_gcn_hockey_violence4.mp4'%}"/>
+  </video> 
+  <h1>Mô hình NNCONV </h1>
+  <video width="300" height="300" controls>
+    <source src="{% static 'model2/model_nnconv_hockey_violence1.mp4'%}"/>
+  </video> 
+  <video width="300" height="300" controls>
+    <source src="{% static 'model2/model_nnconv_hockey_violence2.mp4'%}"/>
+  </video> 
+  <video width="300" height="300" controls>
+    <source src="{% static 'model2/model_nnconv_hockey_violence4.mp4'%}"/>
+  </video> 
+
+  <h1>Mô hình A3TGCN </h1>
+  <video width="300" height="300" controls>
+    <source src="{% static 'model3/model_a3tgcn_hockey3_violence1.mp4'%}"/>
+  </video> 
+  <video width="300" height="300" controls>
+    <source src="{% static 'model3/model_a3tgcn_hockey3_violence2.mp4'%}"/>
+  </video> 
+  <video width="300" height="300" controls>
+    <source src="{% static 'model3/model_a3tgcn_hockey3_violence4.mp4'%}"/>
+  </video> 
+
+
+  <form action="/detecttext/" method="POST">
+    {% csrf_token %}
+    <!-- <input type="text" name="text">
+    
+    <div class=""></div> -->
+    <!-- <input type="submit" value="Gửi"> -->
+  </form>
+
+</body>
+</html>
